@@ -1,0 +1,13 @@
+{
+    "name": "proif3-bot",
+    "version": "1.0.0",
+    "description": "Bot for ProIF",
+    "main": "bot.js",
+    "author": "Rio Aurelio",
+    "dependencies": {
+        "discord.io": "https://github.com/woor/discord.io/tarball/gateway_v6",
+        "discord.js": "^12.1.1",
+        "mathjs": "^6.6.3",
+        "winston": "^3.2.1"
+    }
+}
