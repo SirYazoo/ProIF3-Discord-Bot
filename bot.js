@@ -32,7 +32,19 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             case 'ping':
                 bot.sendMessage({
                     to: channelID,
-                    message: 'Pong!'
+                    message: '',
+                    embed: {
+                        color: 3447003,
+                        footer: { 
+                          text: '!calculate to calculate your operation'
+                        },
+                        thumbnail:
+                        {
+                          url: ''
+                        },
+                        title: 'Welcome to Calculator Bot',
+                        url: ''
+                      }
                 });
             break;
             // !calculate
@@ -54,7 +66,19 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                 
                 bot.sendMessage({
                     to: channelID,
-                    message: resp
+                    message: 'The answer is ',
+                    embed: {
+                        color: 3447003,
+                        footer: { 
+                          text: ''
+                        },
+                        thumbnail:
+                        {
+                          url: ''
+                        },
+                        title: resp,
+                        url: ''
+                      }
                 });
             break;
          }
