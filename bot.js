@@ -53,11 +53,11 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                         message: 'Maaf bro inputnya mana ya?',
                         embed: {
                             color: 3447003,
-                            title: 'Math Calculation',
+                            title: 'Math Calculation Error!',
                             fields: [                                
                                 {
-                                    name:'Error',
-                                    value: `\`\`\`No input expression\`\`\``,
+                                    name:'Output (Error):',
+                                    value: `\`\`\`NO INPUT EXPRESSION!\`\`\``,
                                     inline: false
                                 }
                             ],
@@ -73,8 +73,24 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                 } catch (e) {
                     bot.sendMessage({
                         to: channelID,
-                        message: 'Sorry, please input a valid calculation.'
+                        embed: {
+                            color: 3447003,
+                            title: 'Math Calculation Error!',
+                            fields: [      
+                                {
+                                    name: 'Input: ',
+                                    value: `\`\`\`js\n${args.join('')}\`\`\``,
+                                    inline: false
+                                },                          
+                                {
+                                    name: 'Output (Error):',
+                                    value: `\`\`\`EXPRESSION'S SYNTAX IS NOT CORRECT!\`\`\``,
+                                    inline: false
+                                }
+                            ]
+                        }
                     });
+                    break;
                 }
 
                 bot.sendMessage({
@@ -84,12 +100,12 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                         title: 'Math Calculation',
                         fields: [
                             {
-                                name: 'Input',
+                                name: 'Input: ',
                                 value: `\`\`\`js\n${args.join('')}\`\`\``,
                                 inline: false
                             },
                             {
-                                name: 'Output',
+                                name: 'Output: ',
                                 value: `\`\`\`js\n${resp}\`\`\``,
                                 inline: false
                             }
