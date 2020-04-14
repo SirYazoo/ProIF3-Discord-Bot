@@ -14,7 +14,6 @@ var bot = new Discord.Client({
    token: auth.token,
    autorun: true
 });
-
 bot.on('ready', function (evt) {
     logger.info('Connected');
     logger.info('Logged in as: ');
@@ -26,9 +25,8 @@ bot.on('message', function (user, userID, channelID, message, evt) {
     if (message.substring(0, 1) == '!') {
         var args = message.substring(1).split(' ');
         var cmd = args[0];
-        // console.log(args)
+       
         args = args.splice(1);
-        // console.log(args)
         switch(cmd) {
             // !ping
             case 'ping':
@@ -46,28 +44,6 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             // !calculate
             case 'calculate':
                 let resp;
-                if(args.length == 0){
-                    // console.log("KOSONG HEYY");
-                    bot.sendMessage({
-                        to: channelID,
-                        message: 'Maaf bro inputnya mana ya?',
-                        embed: {
-                            color: 3447003,
-                            title: 'Math Calculation',
-                            fields: [                                
-                                {
-                                    name:'Error',
-                                    value: `\`\`\`No input expression\`\`\``,
-                                    inline: false
-                                }
-                            ],
-                            image: {
-                                url: 'https://i.imgur.com/ESU80CI.png',
-                            },
-                        }
-                    });
-                    break;
-                }
                 try {
                     resp = math.evaluate(args.join(' '));
                 } catch (e) {
