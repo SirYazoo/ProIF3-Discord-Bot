@@ -32,18 +32,12 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             case 'ping':
                 bot.sendMessage({
                     to: channelID,
-                    message: '',
                     embed: {
                         color: 3447003,
                         footer: { 
                           text: '!calculate to calculate your operation'
                         },
-                        thumbnail:
-                        {
-                          url: ''
-                        },
                         title: 'Welcome to Calculator Bot',
-                        url: ''
                       }
                 });
             break;
@@ -58,27 +52,25 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                         message: 'Sorry, please input a valid calculation.'
                     });
                 }
-                // const embed = new disc.MessageEmbed()
-                // embed.setColor(0xffffff)
-                // embed.setTitle('Math Calculation')
-                // embed.addField('Input', `\`\`\`js\n${args.join('')}\`\`\``)
-                // embed.addField('Output', `\`\`\`js\n${resp}\`\`\``)
-                
+
                 bot.sendMessage({
                     to: channelID,
-                    message: 'The answer is ',
                     embed: {
                         color: 3447003,
-                        footer: { 
-                          text: ''
-                        },
-                        thumbnail:
-                        {
-                          url: ''
-                        },
-                        title: resp,
-                        url: ''
-                      }
+                        title: 'Math Calculation',
+                        fields: [
+                            {
+                                name: 'Input',
+                                value: `\`\`\`js\n${args.join('')}\`\`\``,
+                                inline: false
+                            },
+                            {
+                                name: 'Output',
+                                value: `\`\`\`js\n${resp}\`\`\``,
+                                inline: false
+                            }
+                        ]
+                    }
                 });
             break;
          }
