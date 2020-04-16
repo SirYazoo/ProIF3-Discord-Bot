@@ -43,6 +43,22 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                       }
                 });
             break;
+            // !help
+            case 'help':
+                bot.sendMessage({
+                    to: channelID,
+                    embed: {
+                        color: 3447003,
+                        footer: { 
+                          text: 
+                          '!calculate : untuk mengoperasikan bilangan (ex : !calculate 2+7) ; untuk mengkonversikan ukuran (ex :!calculate 10 cm to meter)'
+
+                        },
+                        title: 'How to use this bot?',
+                      }
+                });
+            break;
+            
             // !calculate
             case 'calculate':
                 let resp;
