@@ -2,7 +2,6 @@ var Discord = require('discord.io');
 var logger = require('winston');
 var auth = require('./auth.json');
 const math = require('mathjs')
-const disc = require('discord.js')
 // Configure logger settings
 logger.remove(logger.transports.Console);
 logger.add(new logger.transports.Console, {
@@ -128,6 +127,10 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                         ]
                     }
                 });
+            break;
+
+            case 'trans':
+                console.log("asd")
             break;
          }
      }
