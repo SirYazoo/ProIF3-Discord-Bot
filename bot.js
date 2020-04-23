@@ -2,6 +2,9 @@ var Discord = require('discord.io');
 var logger = require('winston');
 var auth = require('./auth.json');
 const math = require('mathjs')
+// const key = "AIzaSyACGpuXGnqm6XdcTJcX1LrlDWqdvAcCU4w";
+const {Translate} = require('@google-cloud/translate').v2;
+const translate = new Translate();
 // Configure logger settings
 logger.remove(logger.transports.Console);
 logger.add(new logger.transports.Console, {
@@ -10,8 +13,8 @@ logger.add(new logger.transports.Console, {
 logger.level = 'debug';
 // Initialize Discord Bot
 var bot = new Discord.Client({
-   token: auth.token,
-   autorun: true
+    token: auth.token,
+    autorun: true
 });
 
 bot.on('ready', function (evt) {
@@ -28,40 +31,40 @@ bot.on('message', function (user, userID, channelID, message, evt) {
         // console.log(args)
         args = args.splice(1);
         // console.log(args)
-        switch(cmd) {
+        switch (cmd) {
             // !ping
             case 'ping':
                 bot.sendMessage({
                     to: channelID,
                     embed: {
                         color: 3447003,
-                        footer: { 
-                          text: '!calculate to calculate your operation'
+                        footer: {
+                            text: '!help to see available commands'
                         },
                         title: 'Welcome to Calculator Bot',
-                      }
+                    }
                 });
-            break;
+                break;
             // !help
             case 'help':
                 bot.sendMessage({
                     to: channelID,
                     embed: {
                         color: 3447003,
-                        footer: { 
-                          text: 
-                          '!calculate : untuk mengoperasikan bilangan (ex : !calculate 2+7) ; untuk mengkonversikan ukuran (ex :!calculate 10 cm to meter)'
+                        footer: {
+                            text:
+                                '!calculate : untuk mengoperasikan bilangan (ex : !calculate 2+7) ; untuk mengkonversikan ukuran (ex :!calculate 10 cm to meter)'
 
                         },
                         title: 'How to use this bot?',
-                      }
+                    }
                 });
-            break;
-            
+                break;
+
             // !calculate
             case 'calculate':
                 let resp;
-                if(args.length == 0){
+                if (args.length == 0) {
                     // console.log("KOSONG HEYY");
                     bot.sendMessage({
                         to: channelID,
@@ -69,9 +72,9 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                         embed: {
                             color: 3447003,
                             title: 'Math Calculation Error!',
-                            fields: [                                
+                            fields: [
                                 {
-                                    name:'Output (Error):',
+                                    name: 'Output (Error):',
                                     value: `\`\`\`NO INPUT EXPRESSION!\`\`\``,
                                     inline: false
                                 }
@@ -91,12 +94,12 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                         embed: {
                             color: 3447003,
                             title: 'Math Calculation Error!',
-                            fields: [      
+                            fields: [
                                 {
                                     name: 'Input: ',
                                     value: `\`\`\`js\n${args.join('')}\`\`\``,
                                     inline: false
-                                },                          
+                                },
                                 {
                                     name: 'Output (Error):',
                                     value: `\`\`\`EXPRESSION'S SYNTAX IS NOT CORRECT!\`\`\``,
@@ -127,11 +130,26 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                         ]
                     }
                 });
-            break;
+                break;
 
             case 'trans':
-                console.log("asd")
-            break;
-         }
-     }
+                const text = args.slice(1).join(' ');;
+                const target = args[0];
+
+                async function translateText() {
+                    // Translates the text into the target language. "text" can be a string for
+                    // translating a single piece of text, or an array of strings for translating
+                    // multiple texts.
+                    let [translations] = await translate.translate(text, target);
+                    translations = Array.isArray(translations) ? translations : [translations];
+                    console.log('Translations:');
+                    translations.forEach((translation, i) => {
+                        console.log(`${text[i]} => (${target}) ${translation}`);
+                    });
+                }
+
+                translateText();
+                break;
+        }
+    }
 });
