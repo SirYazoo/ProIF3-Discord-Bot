@@ -141,12 +141,32 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                     // multiple texts.
                     let [translations] = await translate.translate(text, target);
                     translations = Array.isArray(translations) ? translations : [translations];
-                    console.log('Translations:');
-                    translations.forEach((translation, i) => {
-                        console.log(`${text[i]} => (${target}) ${translation}`);
+                    bot.sendMessage({
+                        to: channelID,
+                        embed: {
+                            color: 3447003,
+                            title: 'Translation Test',
+                            fields: [
+                                {
+                                    name: 'Input text: ',
+                                    value: `\`\`\`js\n${text}\`\`\``,
+                                    inline: false
+                                },
+                                {
+                                    name: 'Target language: ',
+                                    value: `\`\`\`js\n${target}\`\`\``,
+                                    inline: false
+                                },
+                                {
+                                    name: 'Output Text: ',
+                                    value: `\`\`\`js\n${translations}\`\`\``,
+                                    inline: false
+                                }
+                            ]
+                        }
                     });
                 }
-
+                
                 translateText();
                 break;
         }
