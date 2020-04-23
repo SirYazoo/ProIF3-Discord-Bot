@@ -2,7 +2,6 @@ var Discord = require('discord.io');
 var logger = require('winston');
 var auth = require('./auth.json');
 const math = require('mathjs')
-// const key = "AIzaSyACGpuXGnqm6XdcTJcX1LrlDWqdvAcCU4w";
 const {Translate} = require('@google-cloud/translate').v2;
 const translate = new Translate();
 // Configure logger settings
