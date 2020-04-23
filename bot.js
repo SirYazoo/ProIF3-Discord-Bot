@@ -135,6 +135,41 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                 const text = args.slice(1).join(' ');;
                 const target = args[0];
 
+              
+
+                /**
+                 * TODO(developer): Uncomment the following line before running the sample.
+                 */
+                // const target = 'The target language for language names, e.g. ru';
+                
+                
+
+
+                if (args.length <= 1) {
+                    // console.log("KOSONG HEYY");
+                    bot.sendMessage({
+                        to: channelID,
+                        message: 'Maaf bro inputnya mana ya?',
+                        embed: {
+                            color: 3447003,
+                            title: 'Translation Error!',
+                            fields: [
+                                {
+                                    name: 'Output (Error):',
+                                    value: `\`\`\`NO INPUT!\`\`\``,
+                                    inline: false
+                                }
+                            ],
+                            image: {
+                                url: 'https://i.imgur.com/ESU80CI.png',
+                            },
+                        }
+                    });
+                    break;
+                }
+
+                console.log(args)
+
                 async function translateText() {
                     // Translates the text into the target language. "text" can be a string for
                     // translating a single piece of text, or an array of strings for translating
