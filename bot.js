@@ -27,9 +27,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
     if (message.substring(0, 1) == '!') {
         var args = message.substring(1).split(' ');
         var cmd = args[0];
-        // console.log(args)
         args = args.splice(1);
-        // console.log(args)
         switch (cmd) {
             // !ping
             case 'ping':
@@ -52,7 +50,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                         color: 3447003,
                         footer: {
                             text:
-                                '!calculate : untuk mengoperasikan bilangan (ex : !calculate 2+7) ; untuk mengkonversikan ukuran (ex :!calculate 10 cm to meter)'
+                                '!calculate : untuk mengoperasikan bilangan (ex : !calculate 2+7)\n!trans untuk translate kata (ex : !trans en saya pintar)'
 
                         },
                         title: 'How to use this bot?',
@@ -64,7 +62,6 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             case 'calculate':
                 let resp;
                 if (args.length == 0) {
-                    // console.log("KOSONG HEYY");
                     bot.sendMessage({
                         to: channelID,
                         message: 'Maaf bro inputnya mana ya?',
@@ -134,19 +131,11 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             case 'trans':
                 const text = args.slice(1).join(' ');;
                 const target = args[0];
-
-              
-
                 /**
                  * TODO(developer): Uncomment the following line before running the sample.
                  */
                 // const target = 'The target language for language names, e.g. ru';
-                
-                
-
-
                 if (args.length <= 1) {
-                    // console.log("KOSONG HEYY");
                     bot.sendMessage({
                         to: channelID,
                         message: 'Maaf bro inputnya mana ya?',
