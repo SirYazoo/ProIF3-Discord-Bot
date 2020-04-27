@@ -1,0 +1,6 @@
+# Ignore private key
+auth.json
+avian-current-603-16536effd523.json
+
+# Ignore dependencies
+/node_modules/*
