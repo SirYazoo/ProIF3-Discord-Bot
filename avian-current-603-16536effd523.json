@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "avian-current-603",
+  "private_key_id": "16536effd523792a3bbbba73fb483854966576e2",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCJzZ+DlyKH6uFD\nqm7FrqCMCVGFpC39HnU4nFKacbR9ObRMVsYm9xfigr2i7ZgmUi16rEELgNz19G3P\nOktrMc3LYJ+5bMZCNvvhqBee6iESJii6Jm+EgHvkoH36BiRl7gxBywD5MeS1AxlN\nksXtk/e+y3EwdupiLIJLXd57WvcRDNFwpvvGMQ1G0AW8VWZ4pmOO2iSC99yzIp3d\n57IrOLbguiuq3rwQ3DVOYz5k5BVHyczg+jGwpd/8vyzKDdkw9kHvTB1P1pXdJlbJ\nNpwBW4UlnxhmfSGxfnFW3Y0Hro44wY9r9W3W2NwNG0ubL1RRzHFsGMxbfnpUu6y6\nP0TjMzohAgMBAAECggEAPEwlmrpUiT2c8PNQAh7dsDjZm40R9HpR14ILYPoU/GB2\nBJtJnD4tjNchbHvjQg1eShm6YnKx/MtGC1GaM574yh+O9F9kxw9xGrXnFAmli9/3\nnTB5RnTEAW+6f98VKSbG5TkTRXbv+MaQ2VE6WzEOTEWP0yGNgISyRJEf60EL78DU\nOclBZwgBHLSzZkWWpSuoL9n+NB6GXMrBMu9Td50jOcFUnNoBJ2kNxJcVwVQOFXIf\nnD1HHBBLkaL8XOEJK9p6z4fQXdSvgALwUFp6yuU6yNdHqToXJomJR0RLku9LQq8J\nlLtfdbu2ScbwtV6Hlz/MLubs1FT63+aDhveW124g0wKBgQC9T9KOjbIky5cVtGs6\nNrQVx1aTcuLnL5OeSmYDXbgSszwrA6sgNoPQ+0VPudoCAYmjrmfBCD9PZxSfgEeh\na+bXxPFkHdLYh4JjXGfRh7tMliBbGHLZ1kzqfDarooz1peo8Ab7LZNKpNw0HGtlc\nSPNHHH8jDgIydtfgIGlGNmgA5wKBgQC6WL7LX3xpZY/zJrWI2RAc6FCx1oItvSWP\nQwO3hCWifKmM62903T/M57qVTIrglf/pXXNCQXwPawL/czXtc7pWWfv0GHXKSBk0\n08xEh0sMts9MWWuIzN0aquChuXMU2nhWoFNsR2LyfTy+GHUG4MHjZpB9tqY0kTlr\nnKIwDQ0jtwKBgF5AA2Adg3d2NL4FmOzel0HQgHXgWL8onKHOAIPkgOQuf+IabXQY\nMAA3WQacTMF66n+nMNiVto9djpLqVr8y7Ta3QkbJ4lMTBANb2gQjQ0iZ5Xn07hkt\n7BVByiYhQ3R5Kei+JbM1evvsAHxtDZI4b4YT1egp7UYajNd0y3S9WYI5AoGAbALy\nnGk9cM4IsTS3tpmyqD7UPzCKBj8DnVWHuwCi29sMX/07fm6cA4Yx9UYHnYP0cOzU\n2QuiAEHT3AOIt5kD4feIfgULiXNfAOrfFL2i97yizatrFEFCy6lOSQ94MBct93A4\nyqNaLBoBcmI0uwbd+5RAnk2XaxLeSIziyZ1XB2MCgYEAoa1cvmBNp1OraEaC8RKL\nSt0NnXvOS6KeonZbhrDVIPm15ISeavoys1CpXQeN0vENRMgWuiHniMLjLKIw6AEw\ny1Dovf3nzQ6FOz8Htsrmd6RprKDqooRXlpxTg0IehV0lvCAfCMR0Nszbp/1odic2\nwHpFYE8lW+bNYj0UzR7NLro=\n-----END PRIVATE KEY-----\n",
+  "client_email": "proif-2020-team-3-google-trans@avian-current-603.iam.gserviceaccount.com",
+  "client_id": "107232997039296137030",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/proif-2020-team-3-google-trans%40avian-current-603.iam.gserviceaccount.com"
+}
